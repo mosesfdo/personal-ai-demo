@@ -1,61 +1,68 @@
-# Personal AI Assistant
+# Personal AI Agent Project
 
-A conversational AI assistant using ElevenLabs API for voice interactions.
+This project was created to understand how AI agents work using the ElevenLabs SDK. The code is based on the ElevenLabs conversational AI SDK examples.
+
+## Purpose
+
+This project serves as a learning tool to explore:
+- How AI agents function in real-time conversations
+- Voice interaction with AI assistants
+- Integration with ElevenLabs API
+- Real-time audio processing and response
+
+## Features
+
+- Real-time voice conversation with AI agent
+- Weather information retrieval
+- Web search capabilities
+- File management (save, list, read files)
+- Time and date information
+- Graceful session management
 
 ## Setup
 
-1. **Install dependencies:**
+1. **Install Dependencies**
    ```bash
    pip install -r requirements.txt
    ```
 
-2. **Create environment file:**
-   Create a `.env` file in the project root with the following variables:
+2. **Environment Variables**
+   Create a `.env` file in the root directory with:
    ```
-   ELEVENLABS_API_KEY=your_elevenlabs_api_key_here
+   ELEVENLABS_API_KEY=your_api_key_here
    AGENT_ID=your_agent_id_here
    ```
 
-3. **Get your API credentials:**
-   - Sign up at [ElevenLabs](https://elevenlabs.io/) to get your API key
-   - Create an agent in the ElevenLabs dashboard to get your Agent ID
+3. **Run the Application**
+   ```bash
+   python main.py
+   ```
 
 ## Usage
 
-Run the assistant:
-```bash
-python main.py
-```
-
-The assistant will:
-- Start a voice conversation session
-- Listen for your voice input
-- Respond with voice output
-- Support tools like getting time and weather information
-
-## Features
-
-- **Voice Interaction**: Real-time voice conversation
-- **Tool Integration**: Built-in tools for time and weather queries
-- **Error Handling**: Graceful error handling and shutdown
-- **Environment Configuration**: Secure configuration via environment variables
-
-## Tools
-
-The assistant includes the following tools:
-- `get_time()`: Returns current date and time
-- `get_weather(city)`: Returns weather information for a specified city
-- `web_search(query, max_results)`: Performs web search using DuckDuckGo API
-- `save_file(content, filename, file_type)`: Saves content to a file in the data directory
-- `list_saved_files()`: Lists all saved files with metadata
-- `read_saved_file(filename)`: Reads content from a saved file
-
-## Data Storage
-
-The assistant automatically creates a `data/` directory to store saved files. Files are saved with timestamps to avoid conflicts.
+- Speak to interact with the AI assistant
+- The conversation will be displayed in the console
+- Press Ctrl+C to end the conversation gracefully
+- After 5 minutes, you can type 'exit' to manually end the session
 
 ## Requirements
 
 - Python 3.7+
-- Microphone and speakers for voice interaction
-- ElevenLabs API key and Agent ID 
+- ElevenLabs API key
+- Agent ID from ElevenLabs
+- Microphone for voice input
+- Speakers for voice output
+
+## Code Structure
+
+- `main.py` - Main application entry point
+- `tools.py` - Custom tools and functions for the AI agent
+- `requirements.txt` - Python dependencies
+- `.env` - Environment variables (not tracked in git)
+
+## Notes
+
+- This is a learning project based on ElevenLabs SDK examples
+- The conversation text may not appear in console due to API limitations
+- Listen for the AI's voice response and speak when prompted
+- The project includes error handling and graceful shutdown capabilities 
